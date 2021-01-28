@@ -27,10 +27,11 @@ class Share {
       'mimeType': '$mimeType',
       'text': '$text'
     };
-
+/*
     final tempDir = await getTemporaryDirectory();
     final file = await new File('${tempDir.path}/$name').create();
     await file.writeAsBytes(bytes);
+    */
 
     _channel.invokeMethod('file', argsMap);
   }
@@ -44,14 +45,14 @@ class Share {
       'mimeType': mimeType,
       'text': '$text'
     };
-
+/*
     final tempDir = await getTemporaryDirectory();
 
     for (var entry in files.entries) {
       final file = await new File('${tempDir.path}/${entry.key}').create();
       await file.writeAsBytes(entry.value);
     }
-
+*/
     _channel.invokeMethod('files', argsMap);
   }
 }
