@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       final ByteData bytes = await rootBundle.load('assets/image1.png');
       await Share.file(
-          'esys image', 'esys.png', bytes.buffer.asUint8List(), 'image/png',
+          'esys image', 'esys.png', 'image/png',
           text: 'My optional text.');
     } catch (e) {
       print('error: $e');
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       final ByteData bytes = await rootBundle.load('assets/addresses.csv');
       await Share.file(
-          'addresses', 'addresses.csv', bytes.buffer.asUint8List(), 'text/csv');
+          'addresses', 'addresses.csv', 'text/csv');
     } catch (e) {
       print('error: $e');
     }
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
           'https://shop.esys.eu/media/image/6f/8f/af/amlog_transport-berwachung.jpg'));
       var response = await request.close();
       Uint8List bytes = await consolidateHttpClientResponseBytes(response);
-      await Share.file('ESYS AMLOG', 'amlog.jpg', bytes, 'image/jpg');
+      await Share.file('ESYS AMLOG', 'amlog.jpg', 'image/jpg');
     } catch (e) {
       print('error: $e');
     }
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       final ByteData bytes = await rootBundle.load('assets/cat.mp3');
       await Share.file(
-          'Sound', 'cat.mp3', bytes.buffer.asUint8List(), 'audio/*');
+          'Sound', 'cat.mp3', 'audio/*');
     } catch (e) {
       print('error: $e');
     }
